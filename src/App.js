@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Header from './components/Header';
+import About from './components/About';
+import Footer from './components/Footer';
+import Contact from './components/Contact';
+import Portfolio from './components/Portfolio';
+import Resume from './components/Resume';
 import './App.css';
 
+
+
 function App() {
+  const [page, setPage] = useState('about');
+  function PageToRender() {
+    switch (page) {
+      case 'about':
+        return <About/>
+      case 'contact':
+        return <Contact/>
+      case 'portfolio':
+        return <Portfolio/>
+      case 'resume':
+        return <Resume/>
+
+      default:
+        return <div>
+          default
+        </div>
+      }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header page = {page} setPage = {setPage}/>
+      <PageToRender/>
+      <Footer/>
     </div>
   );
 }
