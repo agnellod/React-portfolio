@@ -1,40 +1,33 @@
 import React, {useState} from 'react';
-import Header from './components/Header';
-import About from './components/About';
-import Footer from './components/Footer';
-import Contact from './components/Contact';
-import Portfolio from './components/Portfolio';
-import Resume from './components/Resume';
+import Header from './components/header';
+import About from './components/about';
+import Footer from './components/footer';
+import Contact from './components/contact';
+import Portfolio from './components/portfolio';
+import Resume from './components/resume';
 import './App.css';
 
 
 
 function App() {
   const [page, setPage] = useState('about');
-  function PageToRender() {
-    switch (page) {
-      case 'about':
-        return <About/>
-      case 'contact':
-        return <Contact/>
-      case 'portfolio':
-        return <Portfolio/>
-      case 'resume':
-        return <Resume/>
+  
 
-      default:
-        return <div>
-          default
-        </div>
-      }
-  }
+  const handleNavigation = (section) => {
+    setPage(section);
+  };
+
   return (
-    <div>
-      <Header page = {page} setPage = {setPage}/>
-      <PageToRender/>
-      <Footer/>
+    <div className="App">
+      <Header page={page} handleNavigation={handleNavigation} />
+      {activePage === "about" && <About />}
+      {activePage === "portfolio" && <Portfolio />}
+      {activePage === "contact" && <Contact />}
+      {activePage === "resume" && <Resume />}
+      <Footer />
     </div>
   );
 }
+
 
 export default App;
