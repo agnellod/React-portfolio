@@ -51,7 +51,6 @@ const Contact = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       if (validateForm()) {
-        // Handle form submission here
         console.log(formData);
         setFormData({ name: '', email: '', message: '' });
       }

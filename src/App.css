@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+:root {
+  --background-color: #333;
+  --primary-color: #333;
+  --secondary-color: #666;
+  --text-color: white;
+  --header-text-color: teal;
+  --border-color: #ddd;
+  --error-color: red;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for uniformity */
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
+.project-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.project-links a.deployed {
+  color: #fff; /* Change to white */
+  text-decoration: none;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--primary-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  color: var(--text-color); /* Set default text color to white */
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1 0 auto;
+}
+
+header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  padding: 20px;
+  color: var(--header-text-color); /* Blue header text color */
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+nav button.active {
+  background-color: var(--secondary-color);
+}
+
+section {
+  padding: 20px;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project {
+  flex: 0 0 calc(33.33% - 20px);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color); /* Set text color to white */
+}
+
+
+.project img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-links a {
+  color: var(--primary-color);
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+.container.mt-5 {
+  margin-top: 5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.invalid-feedback {
+  color: var(--error-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+footer {
+  background-color: var(--primary-color);
+  padding: 20px;
+  color: var(--text-color);
+  text-align: center;
+  align-self: flex-end;
 }
