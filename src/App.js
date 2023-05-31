@@ -10,7 +10,7 @@ import './App.css';
 
 
 function App() {
-  const [page, setPage] = useState('about');
+  const [activePage, setPage] = useState('about');
   
 
   const handleNavigation = (section) => {
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header page={page} handleNavigation={handleNavigation} />
+      <Header activePage={activePage} handleNavigation={handleNavigation} />
       {activePage === "about" && <About />}
       {activePage === "portfolio" && <Portfolio />}
       {activePage === "contact" && <Contact />}

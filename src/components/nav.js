@@ -1,20 +1,22 @@
-import React from 'react';
+import React from "react";
 
-function Nav(props) {
-    function clickHandler(event) {
-    const id = event.target.id
-    props.setPage(id)
-    }
+function Navigation(props) {
+    const sections = ["about", "portfolio", "contact", "resume"];
+  
     return (
-        <div>
-            <a id ='about' onClick={clickHandler} href='#'> About</a>
-            
-            <a id ='portfolio' onClick={clickHandler} href='#'> Portfolio</a>
-            
-            <a id ='contact' onClick={clickHandler} href='#'> Contact</a>
-            
-            <a id ='resume' onClick={clickHandler} href='#'> Resume</a>
-        </div>
-    )
-}
-export default Nav;
+      <nav>
+        {sections.map((section) => (
+          <button
+            key={section}
+            className={props.activePage === section ? "active" : ""}
+            onClick={() => props.handleNavigation(section)}
+          >
+            {section}
+          </button>
+        ))}
+      </nav>
+    );
+  }
+  
+
+export default Navigation;

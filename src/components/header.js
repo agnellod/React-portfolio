@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from './Nav/Nav'
+import Nav from './nav';
 function Header(props) {
     return (
         <header>
             <h1>Dylan A</h1>
-            <Nav page = {props.page} setPage = {props.setPage}/>
+            <Nav page = {props.page} handleNavigation= {props.handleNavigation}/>
         </header>
-    )
+    );
 }
 export default Header;
