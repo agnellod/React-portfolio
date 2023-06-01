@@ -6,6 +6,7 @@ function Portfolio() {
           <h2>Portfolio</h2>
           <div className="project-container">
             <Project title="Password Generator" image="./passwordGen.png" deployed='https://agnellod.github.io/challenge-3/'/>
+            <Project title="Dew Drop Adventure interative game" image="./dewdrop.jpg/" deployed="https://github.com/Kshakely5280/MVC_project"/>
           </div>
         </section>
       );
